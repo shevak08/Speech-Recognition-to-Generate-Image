@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {% load static %}
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Text to Image Converter</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+  <!-- font awesome style -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}" />
+
+
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+<style>
+    /* Background Video */
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+.navbar-brand span {
+  font-size: 2rem; /* Increase font size for 'MARS' */
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.2rem; /* Increase font size for navigation links */
+  font-weight: bold;
+}
+.slider_section h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: white;
+    }
+
+
+
+ 
+       /* Info Section */
+    .info_section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+   
+</style>
+</head>
+
+<body>
+  <!-- Background Video -->
+  <video autoplay loop muted playsinline id="bg-video">
+    <source src="{% static 'images/35.mp4' %}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Header Section -->
+  <header class="header_section">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a class="navbar-brand" href="{% url 'homepage' %}">
+          <span>Converter</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a class="nav-link" href="{% url 'homepage' %}">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact Us</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+<br><br>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class="slider_section ">
+      <div class="container ">
+        <div class="row">
+          <div class="col-md-6 ">
+            <div class="detail-box">
+              <h1>
+                Speech to Image Converter using AI <br>
+              </h1>
+             <b> <p style="text-align: justify;">
+                Text-to-image generation is a method used for generating images related to given tex-tual descriptions.
+                It has a signiﬁcant inﬂuence on many research areas as well as a diverse set ofapplications
+                (e.g., photo-searching, photo-editing, art generation, computer-aided design, image re-construction, captioning, and portrait drawing).
+                The most challenging task is to consistently producerealistic images according to given conditions.
+              </p></b>
+              <a href="{% static 'images/welcome.gif' %}" class="btn btn-warning">Welcome</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="img-box">
+              <img src="{% static 'images/33.avif' %}" alt="" style="height:350px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+
+  <!-- contact section -->
+<br>
+  <section class="">
+    <div class="container">
+<div style="color: white;">
+  <h2>USER REGISTRATION FORM</h2></div>
+  <form action="/registration/" method="post">
+    {% csrf_token%}<b>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter Name" name="t1">
+    </div>
+    <div class="form-group">
+      <label for="mailid">Mail Id:</label>
+      <input type="email" class="form-control" id="mailid" placeholder="Enter Mail Id" name="t2">
+    </div>
+    <div class="form-group">
+      <label for="mobileno">Mobile No:</label>
+      <input type="text" class="form-control" id="mobileno" placeholder="Enter Mobile No" name="t3">
+    </div>
+    <div class="form-group">
+      <label for="userid">User Id:</label>
+      <input type="text" class="form-control" id="userid" placeholder="Enter User Id" name="t4">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="t5">
+    </div>
+    <button type="submit" class="btn btn-warning">REGISTER</button></b>
+  </form>
+      <h4 style="color:blue;">{{msg}}</h4>
+</div>
+  </section>
+
+  <!-- end contact section -->
+
+
+
+  <!-- info section -->
+  <!-- end info_section -->
+
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <script src="{% static 'js/custom.js' %}"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+  <!-- End Google Map -->
+
+
+</body>
+
+</html>

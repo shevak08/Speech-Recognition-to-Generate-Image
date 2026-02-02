@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Text to Image Converter</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+
+  <style>
+    /* Background Video */
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* Navbar */
+    .navbar-brand span {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .navbar-nav .nav-link {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 60px 0;
+      
+      color: #fff;
+    }
+
+    /* Hero Section */
+    .slider_section {
+      text-align: left;
+    }
+
+    .slider_section h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #ffd700;
+    }
+
+    .slider_section p {
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 90%;
+    }
+
+    /* Info Section */
+    .info_items {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .info_items .item {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 50px;
+      border-radius: 10px;
+      transition: 0.3s ease-in-out;
+      text-align: center;
+    }
+
+    .info_items .item:hover {
+      background: rgba(255, 255, 255, 0.4);
+      transform: scale(1.05);
+    }
+
+    .info_items .img-box i {
+      font-size: 2rem;
+      color: #ffd700;
+    }
+
+    /* Social Media Section */
+    .social-box {
+      text-align: center;
+    }
+
+    .social-box h4 {
+      font-size: 1.8rem;
+      color: #ffd700;
+    }
+
+    .social-box .box a {
+      display: inline-block;
+      font-size: 2rem;
+      color: #fff;
+      margin: 10px;
+      transition: 0.3s ease-in-out;
+    }
+
+    .social-box .box a:hover {
+      color: #ffd700;
+    }
+.info_section h4 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffd700;
+  margin-bottom: 20px;
+}
+
+.info_items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.info_items .item p {
+  text-decoration: none;
+  cursor: default;
+}
+
+
+    @media (max-width: 768px) {
+      .info_items {
+        flex-direction: column;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Background Video -->
+  <video autoplay loop muted playsinline id="bg-video">
+    <source src="{% static 'images/35.mp4' %}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Header Section -->
+  <header class="header_section">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a class="navbar-brand" href="{% url 'homepage' %}">
+          <span>Converter</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a class="nav-link" href="{% url 'homepage' %}">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact Us</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Slider Section -->
+  <section class="slider_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <h1>Speech to Image Converter using AI</h1>
+            <p>
+              Text-to-image generation is a method used for generating images related to given textual descriptions.
+              It has a significant influence on many research areas as well as diverse applications.
+            </p>
+            <a href="{% static 'images/welcome.gif' %}" class="btn btn-warning">Welcome</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="{% static 'images/31.jpg' %}" alt="Converter" style="height:350px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Info Section -->
+  <!-- Info Section -->
+<section class="info_section">
+  <div class="container">
+    <h4>Get In Touch</h4>
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <div class="info_items">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="item">
+                <div class="img-box">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
+                </div>
+                <p>The Indian University</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="item">
+                <div class="img-box">
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                </div>
+                <p>+91 123456789</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="item">
+                <div class="img-box">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                </div>
+                <p>herocart@gmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Social Media Section -->
+  <section class="social-box">
+    <h4>Follow Us</h4>
+    <div class="box">
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-youtube"></i></a>
+      <a href="#"><i class="fa fa-instagram"></i></a>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+
+</body>
+
+</html>

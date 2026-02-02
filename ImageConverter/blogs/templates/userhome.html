@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {% load static %}
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Speech to Image Converter</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+  <!-- font awesome style -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}" />
+
+ 
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+<style>
+ /* Background Video */
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+  .navbar-nav {
+      margin-left: auto;
+    }
+.navbar-brand span {
+  font-size: 2rem; /* Increase font size for 'MARS' */
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.2rem; /* Increase font size for navigation links */
+  font-weight: bold;
+}
+
+</style>
+</head>
+
+<body>
+<!-- Background Video -->
+  <video autoplay loop muted playsinline id="bg-video">
+    <source src="{% static 'images/35.mp4' %}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="index.html">
+              <span>
+                Converter
+              </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ">
+                 
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'ImageConverter' %}">Image Converter <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'signout' %}">Signout </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+<br><br>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class="slider_section ">
+      <div class="container ">
+        <div class="row">
+          <div class="col-md-6 ">
+            <div class="detail-box">
+             <div style="color:white;"> <h1>
+                Text to Image Converter using AI <br>
+              </h1></div>
+              <p style="text-align: justify;">
+                Text-to-image generation is a method used for generating images related to given tex-tual descriptions.
+                It has a signiﬁcant inﬂuence on many research areas as well as a diverse set ofapplications
+                (e.g., photo-searching, photo-editing, art generation, computer-aided design, image re-construction, captioning, and portrait drawing).
+                The most challenging task is to consistently producerealistic images according to given conditions.
+                Existing algorithms for text-to-image generation createpictures that do not properly match the text.
+                mage-processing techniques and applications of computer vision (CV) have grownimmensely in recent years from advances made possible
+                by artiﬁcial intelligence and deeplearning’s success.
+              </p>
+               <a href="{% static 'images/welcome.gif' %}" class="btn btn-warning" style="margin-left:200px;">Welcome</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="img-box">
+              <img src="{% static 'images/22.avif' %}" alt="" style="height:350px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+
+
+
+
+  <!-- info section -->
+  <section class="info_section ">
+    <div class="container">
+          </div>
+    <div class="social-box">
+          </div>
+  </section>
+
+
+
+  <!-- end info_section -->
+
+  
+
+
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <script src="{% static 'js/custom.js' %}"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+  <!-- End Google Map -->
+
+
+</body>
+
+</html>

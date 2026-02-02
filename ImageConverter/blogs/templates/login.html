@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Text to Image Converter</title>
+
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/css/bootstrap.min.css">
+
+  <style>
+    /* Background Video */
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+.navbar-brand span {
+  font-size: 2rem; /* Increase font size for 'MARS' */
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.2rem; /* Increase font size for navigation links */
+  font-weight: bold;
+}
+
+ 
+       /* Info Section */
+    .info_section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .detail-box {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+
+
+    /* Image Box */
+    .img-box img {
+      width: 60%;
+      border-radius: 10px;
+    }
+
+    /* Login Form */
+    .login_section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .login_section .form-group label {
+      font-weight: bold;
+    }
+
+    .login_section .form-control {
+      width: 80%;
+      margin: auto;
+    }
+
+    .login_section .btn-primary {
+      background: #f8b400;
+      border: none;
+    }
+
+    .login_section .btn-primary:hover {
+      background: #ffcc00;
+    }
+
+    .register-link {
+      display: block;
+      margin-top: 10px;
+      color: #ffcc00;
+    }
+
+    .error-msg {
+      color: red;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background Video -->
+  <video autoplay loop muted playsinline id="bg-video">
+    <source src="{% static 'images/35.mp4' %}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Header Section -->
+  <header class="header_section">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a class="navbar-brand" href="{% url 'homepage' %}">
+          <span>Converter</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a class="nav-link" href="{% url 'homepage' %}">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact Us</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Info Section -->
+  <section class="info_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div style="color: white;"><h1>Speech to Image Converter using AI</h1></div>
+            <div style="color:#EEE8AA;"><p>
+              Text-to-image generation is a method used for generating images related to textual descriptions.
+              It is widely applied in areas like photo searching, art generation, and computer-aided design.
+              The challenge is producing realistic images based on text input.
+            </p></div>
+            <a href="{% static 'images/welcome.gif' %}" class="btn btn-primary" style="color: #FFF8DC; 
+      justify-content: center;
+      align-items: center;
+      text-align: center;">welcome</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="{% static 'images/32.jpg' %}" alt="AI Image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Login Form -->
+  <section class="login_section">
+    <div class="container"><div style="color:#FFD700;">
+      <h2>LOGIN FORM</h2></div>
+      <form action="/login/" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="userid">User Id:</label>
+          <input type="text" class="form-control" id="userid" placeholder="Enter User Id" name="t1">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password:</label>
+          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="t2">
+        </div>
+        <button type="submit" class="btn btn-primary">LOGIN</button>
+      </form>
+      <a href="{% url 'registration' %}" class="register-link">New User? Register Here</a>
+      <h4 class="error-msg">{{ msg }}</h4>
+    </div>
+  </section>
+
+  <!-- JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

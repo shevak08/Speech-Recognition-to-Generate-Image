@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {% load static %}
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Text to Image Converter</title>
+
+  <!-- slider stylesheet -->
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+<style>
+
+ /* Background Video */
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+.navbar-brand span {
+  font-size: 2rem; /* Increase font size for 'MARS' */
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.2rem; /* Increase font size for navigation links */
+  font-weight: bold;
+}
+ .slider_section h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #ffd700;
+    }
+
+
+</style>
+</head>
+
+<body>
+  
+  <!-- Background Video -->
+  <video autoplay loop muted playsinline id="bg-video">
+    <source src="{% static 'images/35.mp4' %}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Header Section -->
+  <header class="header_section">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a class="navbar-brand" href="{% url 'homepage' %}">
+          <span>Converter</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a class="nav-link" href="{% url 'homepage' %}">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact Us</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+<br><br><br>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class="slider_section ">
+      <div class="container ">
+        <div class="row">
+          <div class="col-md-6 ">
+            <div class="detail-box">
+              <h1>
+                Text to Image / Speech to Image Converter using AI <br>
+              </h1>
+              <b><p style="text-align: justify;color:white;">
+                Text-to-image generation is a remarkable technique that transforms written descriptions into visual representations. It holds immense value in creative industries, enabling artists and designers to translate abstract ideas into tangible visuals effortlessly. This approach leverages advanced AI models trained on large datasets, allowing for applications like digital art creation, product prototyping, and personalized content generation. Additionally, it empowers researchers in fields such as biology, archaeology, and astronomy, where visualizing complex concepts is crucial for understanding and discovery. However, achieving a balance between interpretive creativity and strict adherence to textual descriptions remains an ongoing challenge for developers.</p>
+<hr><p style="text-align: justify;color:#FFD700;">
+Similarly, speech-to-image generation builds upon the same concept but takes it a step further by converting spoken words into images. This innovation has profound implications for accessibility, as it can help individuals with visual impairments visualize spoken content. It also opens doors to new forms of interactive storytelling, immersive education, and real-time communication tools. While the technology continues to evolve, ensuring accuracy, context understanding, and real-time performance are critical hurdles to overcome. Both technologies promise to revolutionize how we interact with and create visual content, bridging the gap between language and imagery.
+              </p></b><br>
+             <a href="{% static 'images/welcome.gif' %}" class="btn btn-warning" style="margin-left:200px;">Welcome</a>
+                
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div style="margin-top:100px;margin-left:50px;">
+              <img src="{% static 'images/30.jpg' %}" alt="" style="height:400px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div><br>
+
+
+
+
+  <!-- info section -->
+ 
+
+
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <script src="{% static 'js/custom.js' %}"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+  <!-- End Google Map -->
+
+
+</body>
+
+</html>
